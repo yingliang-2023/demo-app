@@ -1,10 +1,9 @@
 import React from "react";
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
-  Link
-  
+  Link 
 } from "react-router-dom";
 
 export default function App() {
@@ -24,30 +23,16 @@ export default function App() {
             </li>
           </ul>
         </nav>
+        </div> 
 
-        <Switch>
-          <Route path="/about">
-            <About/>
-          </Route>
-                    <Route path="/users">
-            <About/>
-          </Route>
-                    <Route path="/">
-            <About/>
-          </Route>
-        </Switch>
-      </div>
+        <Routes>
+        <Route path="/about" element={<About />} />
+        <Route path="/users" element={<Users />} />
+        <Route path="/" element={<Home />} />
+        </Routes>
      
-    </Router>
+      </Router>
   );
-
-
-
-
-
-}
-
-
 
 function Home(){
   return (
@@ -65,3 +50,12 @@ function About(){
 function Users(){
   return <h2>Users</h2>
 }
+
+    
+
+
+  
+
+
+}
+
